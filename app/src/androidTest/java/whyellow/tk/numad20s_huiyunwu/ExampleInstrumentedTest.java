@@ -1,4 +1,4 @@
-package com.example.numad20s_huiyunwu;
+package whyellow.tk.numad20s_huiyunwu;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("com.example.numad20s_huiyunwu", appContext.getPackageName());
+        assertEquals("whyellow.tk.numad20s_huiyunwu", appContext.getPackageName());
     }
 }

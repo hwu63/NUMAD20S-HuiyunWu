@@ -1,4 +1,4 @@
-package com.example.numad20s_huiyunwu;
+package whyellow.tk.numad20s_huiyunwu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import whyellow.tk.numad20s_huiyunwu.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity {
