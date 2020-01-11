@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     public void send_email(android.view.View view){
         Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
                 "mailto","wu.hui@husky.neu.edu", null));
-        startActivity(Intent.createChooser(intent, "Choose an Email client :"));
+        startActivity(Intent.createChooser(intent, "Email"));
     }
 
     public void go_to_website(android.view.View view){
