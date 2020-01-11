@@ -2,4 +2,11 @@
     <string name="app_name">NUMAD20S-HuiyunWu</string>
     <string name="name">Huiyun Wu</string>
     <string name="email">wu.hui@husky.neu.edu</string>
+    <string name="todo">TODO</string>
+    <string name="imgcontent">splashscreen</string>
+
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="splash">splash</string>
 </resources>

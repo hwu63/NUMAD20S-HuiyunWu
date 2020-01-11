@@ -6,21 +6,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.content.Intent;
 import android.net.Uri;
-
-import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.TextView;
-
-import whyellow.tk.numad20s_huiyunwu.R;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        FloatingActionButton about = findViewById(R.id.about);
         LinearLayout infos = findViewById(R.id.infos);
         infos.setVisibility(View.GONE);
 
