@@ -1,0 +1,11 @@
+<?xml version ="1.0" encoding ="utf-8"?><!--  Learn More about how to use App Actions: https://developer.android.com/guide/actions/index.html -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Unfocused and pressed -->
+    <item android:color="#888888"
+        android:state_enabled="false" />
+
+    <!-- Default color -->
+    <item android:color="#ffffff" />
+
+</selector>

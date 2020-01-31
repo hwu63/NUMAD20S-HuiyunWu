@@ -9,4 +9,15 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="splash">splash</string>
+    <string name="title_activity_link__collector">Link_Collector</string>
+    <string name="link_name">Name</string>
+    <string name="link_url">URL</string>
+    <string name="autofill_address">https://</string>
+    <string name="paste">PASTE</string>
+    <string name="add_link">Add</string>
+    <string name="link_collector">Link Collector</string>
+    <string name="example_name">Google</string>
+    <string name="example_url">https://google.com</string>
+    <string name="url_warning">URL Required!</string>
+    <string name="empty_warning">Your List is Empty!</string>
 </resources>

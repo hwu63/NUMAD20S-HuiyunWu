@@ -1,12 +1,13 @@
 package whyellow.tk.numad20s_huiyunwu;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
-import android.view.View;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,6 +28,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button link_collector = findViewById(R.id.Link_Collector);
+        link_collector.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent LinkCollectorIntent = new Intent(getApplicationContext(), Link_Collector.class);
+                startActivity(LinkCollectorIntent);
+            }
+        });
     }
 
     public void display_about(android.view.View view) {
