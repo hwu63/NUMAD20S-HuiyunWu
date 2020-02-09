@@ -36,6 +36,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(LinkCollectorIntent);
             }
         });
+
+        Button find_primes = findViewById(R.id.find_Primes);
+        find_primes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent FindPrimesIntent = new Intent(getApplicationContext(), FindPrimes.class);
+                startActivity(FindPrimesIntent);
+            }
+        });
     }
 
     public void display_about(android.view.View view) {

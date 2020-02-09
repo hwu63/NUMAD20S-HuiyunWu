@@ -20,4 +20,10 @@
     <string name="example_url">https://google.com</string>
     <string name="url_warning">URL Required!</string>
     <string name="empty_warning">Your List is Empty!</string>
+    <string name="find_primes">Find Primes</string>
+    <string name="number2">2</string>
+    <string name="stop_hint">Tap to Stop</string>
+    <string name="powerOrBattery">battery</string>
+    <string name="watch_time">WATCH TIME</string>
+    <string name="stopTime">STOP WATCH TIME</string>
 </resources>

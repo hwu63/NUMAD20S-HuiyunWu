@@ -3,16 +3,24 @@
     package="whyellow.tk.numad20s_huiyunwu"
     android:installLocation="auto">
 
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/my_ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/my_ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        >
+
         <activity
             android:name=".Link_Collector"
             android:label="@string/title_activity_link__collector"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FindPrimes"
+            android:label="@string/find_primes"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SplashActivity"
