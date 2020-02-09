@@ -26,4 +26,5 @@
     <string name="powerOrBattery">battery</string>
     <string name="watch_time">WATCH TIME</string>
     <string name="stopTime">STOP WATCH TIME</string>
+    <string name="math_magic">MATH MAGIC</string>
 </resources>

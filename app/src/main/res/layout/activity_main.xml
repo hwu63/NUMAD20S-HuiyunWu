@@ -62,7 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="152dp"
         android:backgroundTint="#2196F3"
-        android:text="@string/find_primes"
+        android:text="@string/math_magic"
         android:textColor="@drawable/button_text_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
