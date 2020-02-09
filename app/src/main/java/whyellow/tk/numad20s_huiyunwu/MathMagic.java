@@ -15,6 +15,8 @@ import android.os.PowerManager;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import java.util.Calendar;
@@ -24,7 +26,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
-public class FindPrimes extends AppCompatActivity {
+public class MathMagic extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +58,14 @@ public class FindPrimes extends AppCompatActivity {
                 return true;
             }
         };
-        handler.post(runnable);
+
+        Button find_primes = findViewById(R.id.find_primes);
+        find_primes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                handler.post(runnable);
+                }
+        });
 
         View coverview = findViewById(R.id.coverview_fp);
         coverview.setOnClickListener(new View.OnClickListener() {
@@ -66,20 +75,13 @@ public class FindPrimes extends AppCompatActivity {
             }
         });
 
-        Button watchTime = findViewById(R.id.watchTime);
-
-        watchTime.setOnClickListener(new View.OnClickListener() {
+        Switch onOffSwitch = findViewById(R.id.watch_time);
+        onOffSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onClick(View view) {
-                startRepeat();
-                }
-        });
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) startRepeat();
+                    else stopRepeat();
 
-        Button stopTime = findViewById(R.id.stopTime);
-        stopTime.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               stopRepeat();
             }
         });
 
@@ -90,8 +92,10 @@ public class FindPrimes extends AppCompatActivity {
                 int plugged = intent.getIntExtra(BatteryManager.EXTRA_PLUGGED, -1);
                 if (plugged == BatteryManager.BATTERY_PLUGGED_AC || plugged == BatteryManager.BATTERY_PLUGGED_USB) {
                     powerOrBattery.setText("POWER!!!");
+                    powerOrBattery.setTextColor(0xFF0EA00E);
                 } else {
                     powerOrBattery.setText("battery");
+                    powerOrBattery.setTextColor(Color.GRAY);
                 }
             }
         };

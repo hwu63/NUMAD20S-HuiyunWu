@@ -37,12 +37,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button find_primes = findViewById(R.id.find_Primes);
-        find_primes.setOnClickListener(new View.OnClickListener() {
+        Button math_magic = findViewById(R.id.math_magic);
+        math_magic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent FindPrimesIntent = new Intent(getApplicationContext(), FindPrimes.class);
-                startActivity(FindPrimesIntent);
+                Intent MathMagicIntent = new Intent(getApplicationContext(), MathMagic.class);
+                startActivity(MathMagicIntent);
             }
         });
     }

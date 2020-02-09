@@ -3,41 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/watchTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="false"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="157dp"
-        android:background="@drawable/round_button"
-        android:paddingHorizontal="8sp"
-        android:text="@string/watch_time"
-        android:textColor="@drawable/button_text_color"
-        android:textSize="24sp" />
-
-    <Button
-        android:id="@+id/stopTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="false"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="81dp"
-        android:background="@drawable/round_button"
-        android:paddingHorizontal="8sp"
-        android:text="@string/stopTime"
-        android:textColor="@drawable/button_text_color"
-        android:textSize="24sp" />
-
     <TextView
         android:id="@+id/stopHint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="295dp"
+        android:layout_marginBottom="180dp"
         android:text="@string/stop_hint"
         android:textSize="36sp" />
 
@@ -62,13 +34,49 @@
 
     <TextView
         android:id="@+id/powerOrBattery"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="75dp"
+        android:layout_height="25dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="294dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="309dp"
+        android:layout_marginTop="43dp"
+        android:background="@drawable/battery"
+        android:backgroundTint="#529BF7"
+        android:gravity="center"
         android:text="@string/powerOrBattery"
-        android:textSize="24sp" />
+        android:textSize="12sp" />
+
+    <Switch
+        android:id="@+id/watch_time"
+        android:layout_width="wrap_content"
+        android:layout_height="66dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="22dp"
+        android:showText="false"
+        android:switchMinWidth="30dp"
+        android:switchPadding="5sp"
+        android:switchTextAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:text="@string/watch_time"
+        android:textOff="@string/stopTime"
+        android:textOn="@string/watch_time"
+        android:textSize="18sp"
+        android:thumbTint="#408FE4" />
+
+    <Button
+        android:id="@+id/find_primes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="295dp"
+        android:layout_marginBottom="286dp"
+        android:background="@drawable/round_button"
+        android:paddingHorizontal="5sp"
+        android:text="@string/find_primes"
+        android:textColor="@drawable/button_text_color"
+        android:textSize="18sp" />
 
 </RelativeLayout>
