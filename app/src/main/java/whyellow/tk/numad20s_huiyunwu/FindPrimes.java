@@ -134,7 +134,7 @@ public class FindPrimes extends AppCompatActivity {
         runnable_t = new Runnable(){
             public void run(){
                 createNotification();
-                handler_t.postDelayed(this, 10000);
+                handler_t.postDelayed(this, 60000);
             }
         };
         handler_t.post(runnable_t);
