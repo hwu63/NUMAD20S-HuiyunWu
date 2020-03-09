@@ -45,4 +45,12 @@ public class LinkSQLite extends SQLiteOpenHelper{
        return c;
     }
 
+    public int getCount(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT  * FROM linkTable", null);
+        int count = cursor.getCount();
+        cursor.close();
+        return count;
+    }
+
 }

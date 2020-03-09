@@ -4,7 +4,6 @@ package whyellow.tk.numad20s_huiyunwu;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -23,7 +22,6 @@ import android.widget.TextView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
-import java.util.ArrayList;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -79,7 +77,8 @@ public class Link_Collector extends AppCompatActivity {
                 db.clearAll();
                 lAdapter.swapCursor(db.getAll());
                 lAdapter.notifyDataSetChanged();
-                empty_warning();
+                TextView empty_warning = findViewById(R.id.empty_warning);
+                empty_warning.setVisibility(View.VISIBLE);
             }
         });
 
@@ -160,6 +159,8 @@ public class Link_Collector extends AppCompatActivity {
                         db.insert(name, url);
                         lAdapter.swapCursor(db.getAll());
                         lAdapter.notifyDataSetChanged();
+                        TextView empty_warning = findViewById(R.id.empty_warning);
+                        empty_warning.setVisibility(View.INVISIBLE);
 
                         //Snackbar Message
                         CoordinatorLayout LCLayout = findViewById(R.id.link_collector);
@@ -184,11 +185,5 @@ public class Link_Collector extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    private void empty_warning(){
-        //"Your list is empty!"
-        TextView empty_warning = findViewById(R.id.empty_warning);
-        empty_warning.setVisibility(lAdapter.getItemCount() == 0?View.VISIBLE:View.INVISIBLE);
     }
 }
