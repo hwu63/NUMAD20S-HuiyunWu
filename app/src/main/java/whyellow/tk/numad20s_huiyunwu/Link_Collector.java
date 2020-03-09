@@ -61,6 +61,11 @@ public class Link_Collector extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
+
+        TextView empty_warning = findViewById(R.id.empty_warning);
+        if (db.getCount() != 0){
+        empty_warning.setVisibility(View.INVISIBLE);}
+
         //the list
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
