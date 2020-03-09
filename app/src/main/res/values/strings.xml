@@ -27,4 +27,11 @@
     <string name="watch_time">WATCH TIME</string>
     <string name="stopTime">STOP WATCH TIME</string>
     <string name="math_magic">MATH MAGIC</string>
+    <string name="location">LOCATION</string>
+    <string name="show_location">SHOW LOCATION</string>
+    <string name="hide_location">HIDE LOCATION</string>
+    <string name="number0">0</string>
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+    <string name="wait_hint">Please Wait 10 Sec For the Sensor to Load</string>
 </resources>
