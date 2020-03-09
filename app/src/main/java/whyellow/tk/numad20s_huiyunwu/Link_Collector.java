@@ -1,8 +1,10 @@
+
 package whyellow.tk.numad20s_huiyunwu;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -35,10 +37,11 @@ import static android.content.ClipDescription.MIMETYPE_TEXT_PLAIN;
 
 public class Link_Collector extends AppCompatActivity {
 
-    ArrayList<Link> links = new ArrayList<>();
+    //    ArrayList<Link> links = new ArrayList<>();
     private RecyclerView recyclerView;
-    private RecyclerView.Adapter lAdapter;
+    private LinkAdapter lAdapter;
     private RecyclerView.LayoutManager layoutManager;
+    private LinkSQLite db;
 
     public static void setSnackbarColor(Snackbar snackbar, int backgroundColor) {
         View view = snackbar.getView();
@@ -52,6 +55,7 @@ public class Link_Collector extends AppCompatActivity {
         setContentView(R.layout.activity_link__collector);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        db = new LinkSQLite(getApplicationContext());
 
         //back button
         if (getSupportActionBar() != null){
@@ -65,8 +69,19 @@ public class Link_Collector extends AppCompatActivity {
 
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        lAdapter = new LinkAdapter(links);
+        lAdapter = new LinkAdapter(getApplicationContext(),db.getAll());
         recyclerView.setAdapter(lAdapter);
+
+        FloatingActionButton clear_button = findViewById(R.id.clear_all);
+        clear_button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                db.clearAll();
+                lAdapter.swapCursor(db.getAll());
+                lAdapter.notifyDataSetChanged();
+                empty_warning();
+            }
+        });
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -141,8 +156,10 @@ public class Link_Collector extends AppCompatActivity {
                         if (name.isEmpty()){
                             name = "New Bookmark";
                         }
-                        Link link = new Link(name, url);
-                        add_link(link);
+
+                        db.insert(name, url);
+                        lAdapter.swapCursor(db.getAll());
+                        lAdapter.notifyDataSetChanged();
 
                         //Snackbar Message
                         CoordinatorLayout LCLayout = findViewById(R.id.link_collector);
@@ -150,12 +167,12 @@ public class Link_Collector extends AppCompatActivity {
                         setSnackbarColor(s,0xff2195f3);
                         s.show();
                         popupWindow.dismiss();
+                    }
+                });
+
             }
+
         });
-
-    }
-
-});
 
     }
 
@@ -169,27 +186,9 @@ public class Link_Collector extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void add_link(Link link) {
-        int pos;
-        if(links.size() < 1){
-            pos = 0;
-        } else{
-         pos = links.size()-1;
-        }
-        links.add(pos, link);
-        lAdapter.notifyItemInserted(pos);
-        empty_warning();
-    }
-
-    private void remove_link(int pos) {
-        links.remove(pos);
-        lAdapter.notifyItemRemoved(pos);
-        empty_warning();
-    }
-
     private void empty_warning(){
-    //"Your list is empty!"
-    TextView empty_warning = findViewById(R.id.empty_warning);
-    empty_warning.setVisibility(links.size()==0?View.VISIBLE:View.INVISIBLE);
+        //"Your list is empty!"
+        TextView empty_warning = findViewById(R.id.empty_warning);
+        empty_warning.setVisibility(lAdapter.getItemCount() == 0?View.VISIBLE:View.INVISIBLE);
     }
 }

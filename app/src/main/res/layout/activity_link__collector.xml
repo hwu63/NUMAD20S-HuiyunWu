@@ -7,6 +7,17 @@
     android:layout_height="match_parent"
     tools:context=".Link_Collector">
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/clear_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:tint="#d81b60"
+        app:backgroundTint="#FFFFFF"
+        app:rippleColor="#000000"
+        app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,6 +41,7 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         android:tint="#FFFFFF"
+        app:rippleColor="#00000000"
         app:srcCompat="@android:drawable/ic_input_add" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
